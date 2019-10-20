@@ -1,0 +1,11 @@
+# compiled files
+target/
+
+# maven release tempfiles
+*.releaseBackup
+release.properties
+
+# intellij files
+*.iml
+.idea/
+
