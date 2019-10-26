@@ -26,8 +26,13 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <scm.repository>scm:git:ssh://git@github.com:mycompany/myproject.git</scm.repository>
         <docker.repository.namespace>registry.mycompany.com/myproject</docker.repository.namespace>
     </properties>
+
+    <scm>
+        <developerConnection>${scm.repository}</developerConnection>
+    </scm>
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -44,6 +49,15 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
