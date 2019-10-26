@@ -27,7 +27,20 @@ cd myproject-web
 mvn spring-boot:run
 ```
 
-## References
+## Building Docker image and sending to registry
 
+SNAPSHOT version:
+
+```
+mvn clean install -Pdocker-build
+```
+
+Release version:
+
+```
+mvn clean install -Pdocker-build-release
+```
+
+## References
 This project was originally based on this official Spring Boot guide - https://spring.io/guides/gs/rest-service/
 
