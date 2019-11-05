@@ -101,6 +101,16 @@
                                 <goal>push</goal>
                             </goals>
                         </execution>
+                        <execution>
+                            <id>tag-latest</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>tag</goal>
+                            </goals>
+                            <configuration>
+                                <tag>latest</tag>
+                            </configuration>
+                        </execution>
                     </executions>
                     <dependencies>
                         <dependency>
